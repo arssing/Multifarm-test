@@ -9,7 +9,9 @@ source env/bin/activate
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
+
 Go to http://127.0.0.1:8000 (wait a bit)
+
 Example response:
 {"apr":45.41}
 
