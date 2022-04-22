@@ -1,15 +1,12 @@
-from flask import Flask
+from fastapi import FastAPI
 from utils import get_APR
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route("/")
-def index():
+@app.get("/")
+async def root():
     try:
         apr = get_APR()
         return {"apr":apr}
     except:
-        return {"apr":"something went wrong"}
-
-if __name__ == "__main__":
-    app.run()
+        return {"error":"something went wrong"}
